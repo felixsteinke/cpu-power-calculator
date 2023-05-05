@@ -1,0 +1,3 @@
+[submodule "spec_power_model"]
+	path = spec_power_model
+	url = https://github.com/green-coding-berlin/spec-power-model.git
