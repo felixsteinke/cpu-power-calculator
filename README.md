@@ -42,7 +42,7 @@ Endpoint is available at: `POST http://localhost:8080/api/calc-power` (e.g. [tes
 
 Power Model including an array of power data that describes the watt consumption at different utilization levels.
 
-The collection utilization values are between `0` to `100` with the step range 5.
+The utilization values in the array are between `0` and `100` with the step range 5.
 
 ```json
 {
