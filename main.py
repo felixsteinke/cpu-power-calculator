@@ -53,9 +53,14 @@ async def calculate(argsModel: ArgumentInputModel):
     predictions_interpolated = interpolate_predictions(predictions_inferred)
 
     response = PowerOutputModel()
-    for utilization in range(0, 101, 5):
-        data = PowerConsumptionData(utilization=utilization, watt=predictions_interpolated[utilization])
-        response.powerData.append(data)
+    for utilization in range(0, 91, 5):
+        response.powerData.append(
+            PowerConsumptionData(utilization=utilization, watt=predictions_interpolated[utilization]))
+    # adjustment for similar values at 95 and 100
+    response.powerData.append(
+        PowerConsumptionData(utilization=95, watt=predictions_interpolated[94]))
+    response.powerData.append(
+        PowerConsumptionData(utilization=100, watt=predictions_interpolated[99]))
     return response
 
 
