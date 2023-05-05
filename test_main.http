@@ -1,0 +1,16 @@
+# Test your FastAPI endpoints
+
+POST http://localhost:8080/api/calc-power
+Content-Type: application/json
+Accept: application/json
+
+{
+    "cpu_freq": 3500,
+    "cpu_threads": 4,
+    "cpu_cores": 8,
+    "tdp": 140,
+    "release_year": 2021,
+    "ram": 16,
+    "architecture": "haswell",
+    "cpu_make": "intel"
+}
