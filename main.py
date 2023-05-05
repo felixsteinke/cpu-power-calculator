@@ -1,3 +1,5 @@
+from typing import Optional
+
 from fastapi import FastAPI
 from pydantic import BaseModel
 
@@ -10,9 +12,9 @@ class ArgumentInputModel(BaseModel):
     cpu_cores: int
     tdp: int
     release_year: int
-    ram: int
-    architecture: str
-    cpu_make: str
+    ram: Optional[int] = 0
+    architecture: Optional[str] = None
+    cpu_make: Optional[str] = None
 
 
 class PowerConsumptionData(BaseModel):
