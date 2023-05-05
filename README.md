@@ -10,7 +10,7 @@ FastAPI for the Green Coding Berlin - XGBoost PowerModel.
 
 ## Installation
 
-Test on __Python 3.10.3__:
+Tested on __Python 3.10.3__:
 
 ```shell
 python -m venv venv
