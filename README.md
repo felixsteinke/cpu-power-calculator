@@ -60,6 +60,10 @@ The utilization values in the array are between `0` and `100` with the step rang
 ## Container Image
 
 ```shell
-docker build -t cpu-power-api .
-docker run -p 8080:8080 cpu-power-api
+docker build -t ghcr.io/felixsteinke/cpu-power-calculator:latest .
+docker run -p 8080:8080 --name cpu-power-api ghcr.io/felixsteinke/cpu-power-calculator
+```
+
+```shell
+docker push ghcr.io/felixsteinke/cpu-power-calculator:latest
 ```
