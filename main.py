@@ -7,14 +7,14 @@ from spec_power_model.xgb import *
 
 
 class ArgumentInputModel(BaseModel):
-    cpu_freq: int
-    cpu_threads: int
-    cpu_cores: int
-    tdp: int
-    release_year: int
-    ram: Optional[int] = 0
-    architecture: Optional[str] = None
-    cpu_make: Optional[str] = None
+    cpu_freq: Optional[int]
+    cpu_threads: Optional[int]
+    cpu_cores: Optional[int]
+    tdp: Optional[int]
+    release_year: Optional[int]
+    ram: Optional[int]
+    architecture: Optional[str]
+    cpu_make: Optional[str]
 
 
 class PowerConsumptionData(BaseModel):
@@ -33,6 +33,8 @@ app = FastAPI()
 
 @app.post('/api/calc-power', response_model=PowerOutputModel)
 async def calculate(argsModel: ArgumentInputModel):
+    print('Input Arguments: ' + argsModel.json())
+
     data_frame = pd.DataFrame.from_dict({
         'HW_CPUFreq': [argsModel.cpu_freq],
         'CPUThreads': [argsModel.cpu_threads],

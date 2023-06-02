@@ -19,24 +19,28 @@ pip install -r requirements.txt
 python main.py
 ```
 
+Running [tests](tests/test_main.py):
+
+```shell
+pytest --verbose --capture=no
+```
+
 ## Usage
 
 Endpoint is available at: `POST http://localhost:8080/api/calc-power` (e.g. [test_main.http](test_main.http))
 
 ### Request Body Parameters
 
-| Parameter      | Datatype | Unit | Expected Values  | Description                              |
-|----------------|----------|------|------------------|------------------------------------------|
-| cpu_freq       | integer  | MHz  | 3500             | CPU frequency                            |
-| cpu_threads    | integer  | #    | 128              | Number of CPU threads                    |
-| cpu_cores      | integer  | #    | 64               | Number of CPU cores                      |
-| tdp            | integer  | Watt | 240              | TDP of the CPU                           |
-| release_year   | integer  | Year | 2023             | Release year of the CPU                  |
-| ram**          | integer  | GB   | 16               | Amount of DRAM for the bare metal system |
-| architecture** | string   |      | `haswell`        | The architecture of the CPU. lowercase!  |
-| cpu_make**     | string   | Enum | `intel` or `amd` | The make of the CPU (intel or amd)       |
-
-** optional
+| Parameter    | Datatype | Unit | Expected Values  | Description                              |
+|--------------|----------|------|------------------|------------------------------------------|
+| cpu_freq     | integer  | MHz  | 3500             | CPU frequency                            |
+| cpu_threads  | integer  | #    | 128              | Number of CPU threads                    |
+| cpu_cores    | integer  | #    | 64               | Number of CPU cores                      |
+| tdp          | integer  | Watt | 240              | TDP of the CPU                           |
+| release_year | integer  | Year | 2023             | Release year of the CPU                  |
+| ram          | integer  | GB   | 16               | Amount of DRAM for the bare metal system |
+| architecture | string   |      | `haswell`        | The architecture of the CPU. lowercase!  |
+| cpu_make     | string   | Enum | `intel` or `amd` | The make of the CPU (intel or amd)       |
 
 ### Response Body
 
